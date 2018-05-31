@@ -24,8 +24,16 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
         <style jsx global>{`
-          body {
+          html {
             border-top: 0.25rem solid ${palette.black};
+            font-size: 16px;
+          }
+          @media (min-width: 450px) {
+            html {
+              font-size: 20px;
+            }
+          }
+          body {
             font-family: "Gentium Book Basic", serif;
             padding: 1rem;
             max-width: 25rem;
