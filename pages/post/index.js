@@ -13,10 +13,20 @@ export default class extends React.Component {
 
   render() {
     if (!this.props.post) {
-      return <div>hey chump, this is not a real post</div>;
+      return (
+        <div>
+          <Head>
+            <title>you chump!</title>
+          </Head>
+          hey chump, this is not a real post
+        </div>
+      );
     }
     return (
       <div>
+        <Head>
+          <title>{this.props.post.fields.title}</title>
+        </Head>
         <Link href="/">Home</Link>
         <h1>{this.props.post.fields.title}</h1>
         <Markdown source={this.props.post.fields.body} className="post" />
