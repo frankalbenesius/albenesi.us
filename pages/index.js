@@ -30,16 +30,16 @@ export default class extends React.Component {
       <div>
         <div className="flex">
           <div className="left">
-            <Block header="Frank Albenesius">
-              I am Frank. I like to make things. I like websites, games, D&D,
-              bad jokes, and art.
+            <Block header="About">
+              I am Frank Albenesius. I like to make things. I like programming,
+              games, D&D, bad jokes, and art.
             </Block>
           </div>
           <div className="right">
             <img src="/static/me.jpg" />
           </div>
         </div>
-        <Block header="Links">
+        <Block>
           <Link href="https://instagram.com/frank_stl">Instagram</Link>&ensp;
           <Link href="https://twitter.com/frankalbenesius">Twitter</Link>&ensp;
           <Link href="https://github.com/frankalbenesius">Github</Link>&ensp;
