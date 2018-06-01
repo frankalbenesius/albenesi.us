@@ -50,9 +50,22 @@ export default class MyDocument extends Document {
           a {
             color: ${palette.blue[5]};
           }
-          code {
+          pre code {
+            display: block;
+            padding: 1em;
+            border-radius: 3px;
+            background: ${palette.black};
+            color: ${palette.white};
+          }
+          p code {
+            color: ${palette.red[7]};
             white-space: nowrap;
             padding: 0 0.1rem;
+          }
+          blockquote {
+            margin: 0;
+            padding-left: 1em;
+            border-left: 2px solid ${palette.gray[7]};
           }
         `}</style>
       </html>
