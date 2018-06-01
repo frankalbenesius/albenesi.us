@@ -1,9 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import * as Markdown from "react-markdown";
+import format from "date-fns/format";
 
 import Link from "../../components/Link";
 import content from "../../util/content";
+import palette from "../../util/palette";
 
 export default class extends React.Component {
   static async getInitialProps({ query: { slug } }) {
@@ -12,7 +14,8 @@ export default class extends React.Component {
   }
 
   render() {
-    if (!this.props.post) {
+    const post = this.props.post;
+    if (!post) {
       return (
         <div>
           <Head>
@@ -25,11 +28,19 @@ export default class extends React.Component {
     return (
       <div>
         <Head>
-          <title>{this.props.post.fields.title}</title>
+          <title>{post.fields.title}</title>
         </Head>
         <Link href="/">Home</Link>
-        <h1>{this.props.post.fields.title}</h1>
-        <Markdown source={this.props.post.fields.body} className="post" />
+        <header>
+          <h1>{post.fields.title}</h1>
+          <time>{format(post.fields.date, "MMMM Do, YYYY")}</time>
+        </header>
+        <Markdown source={post.fields.body} className="post" />
+        <style jsx>{`
+          header {
+            padding: 2em 0;
+          }
+        `}</style>
       </div>
     );
   }

@@ -10,7 +10,7 @@ import palette from "../util/palette";
 import Block from "../components/Block";
 import Link from "../components/Link";
 
-const byRecency = (a, b) => compareDesc(a.sys.createdAt, b.sys.createdAt);
+const byRecency = (a, b) => compareDesc(a.fields.date, b.fields.date);
 const byPriority = (a, b) => {
   const pA = a.fields.priority || 0;
   const pB = b.fields.priority || 0;
@@ -65,7 +65,7 @@ export default class extends React.Component {
         <Block header="Journal">
           {posts.sort(byRecency).map((post, i) => (
             <div key={post.sys.id}>
-              {format(post.sys.createdAt, "MM/DD/YY")}
+              {format(post.fields.date, "MM/DD/YY")}
               &emsp;
               <Link
                 href={`/post?slug=${post.fields.slug}`}
