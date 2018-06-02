@@ -2,7 +2,7 @@
 export default {
   base: "#f46542",
   black: "#463d3b",
-  white: "#faf9f8",
+  white: "#faf9f8", // added attribute
   gray: [
     "#faf9f8",
     "#f0eceb",
