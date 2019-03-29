@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript } from "next/document";
-import Link from "next/link";
 import palette from "../util/palette";
 
 export default class MyDocument extends Document {
@@ -13,6 +12,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>frank.dev</title>
+          <link rel="shortcut icon" href="static/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link
             href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic"

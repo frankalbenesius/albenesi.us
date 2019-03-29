@@ -1,12 +1,8 @@
 import React from "react";
-import Head from "next/head";
-import * as Markdown from "react-markdown";
 import format from "date-fns/format";
 import compareDesc from "date-fns/compare_desc";
-import getYear from "date-fns/get_year";
 
 import content from "../util/content";
-import palette from "../util/palette";
 import Block from "../components/Block";
 import Link from "../components/Link";
 

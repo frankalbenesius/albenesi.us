@@ -5,7 +5,6 @@ import format from "date-fns/format";
 
 import Link from "../../components/Link";
 import content from "../../util/content";
-import palette from "../../util/palette";
 
 export default class extends React.Component {
   static async getInitialProps({ query: { slug } }) {
