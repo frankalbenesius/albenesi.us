@@ -31,34 +31,33 @@ export default class extends React.Component {
         <div className="flex">
           <div className="left">
             <Block header="About">
-              I am Frank Albenesius. I like to make things. I like programming,
-              games, D&D, bad jokes, and art.
+              Hi! I'm Frank Albenesius. I make web applications, bake bagels,
+              play D&D, and create generative art.
             </Block>
           </div>
           <div className="right">
             <img src="/static/me.jpg" />
           </div>
         </div>
-        <Block>
-          <Link href="https://instagram.com/frank_stl">Instagram</Link>&ensp;
-          <Link href="https://twitter.com/frankalbenesius">Twitter</Link>&ensp;
+        <Block header="Links">
           <Link href="https://github.com/frankalbenesius">Github</Link>&ensp;
+          <Link href="https://instagram.com/frankalbenesius">
+            Instagram
+          </Link>&ensp;
+          <Link href="https://twitter.com/frankalbenesius">Twitter</Link>&ensp;
+          <Link href="https://twitch.tv/frankdotdev">Twitch</Link>&ensp;
           <Link href="mailto:frankalbenesius@gmail.com">Email</Link>
         </Block>
         <Block header="Projects">
           {projects.sort(byPriority).map(project => (
-            <div key={project.sys.id}>
-              <Link
-                title={project.fields.description}
-                href={project.fields.url}
-              >
-                {project.fields.title}
-              </Link>
+            <div key={project.sys.id} className="project">
+              <Link href={project.fields.url}>{project.fields.title}</Link>
               {project.fields.github ? (
                 <span className="github-link">
-                  <Link href={project.fields.github}>[code]</Link>
+                  <Link href={project.fields.github}>(repo)</Link>
                 </span>
               ) : null}
+              <div>{project.fields.description}</div>
             </div>
           ))}
         </Block>
@@ -77,6 +76,9 @@ export default class extends React.Component {
           ))}
         </Block>
         <style jsx>{`
+          .project {
+            margin-bottom: 0.5rem;
+          }
           .flex {
             display: flex;
           }
@@ -89,7 +91,6 @@ export default class extends React.Component {
           }
           .github-link {
             margin-left: 0.5rem;
-            opacity: 0.4;
             font-size: 0.8em;
           }
         `}</style>

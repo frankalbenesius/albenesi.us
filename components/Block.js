@@ -8,6 +8,7 @@ export default ({ children, header }) => (
       }
       .header {
         font-weight: bolder;
+        margin-bottom: 0.5rem;
       }
     `}</style>
   </div>

@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>I am Frank.</title>
+          <title>frank.dev</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link
             href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic"
@@ -36,10 +36,8 @@ export default class MyDocument extends Document {
           body {
             font-family: "Gentium Book Basic", serif;
             padding: 1rem;
-            max-width: 25rem;
+            max-width: 34rem;
             margin: 0 auto;
-            color: ${palette.black};
-            background: ${palette.white};
           }
           * {
             box-sizing: border-box;
@@ -48,14 +46,14 @@ export default class MyDocument extends Document {
             max-width: 100%;
           }
           a {
-            color: ${palette.blue[5]};
+            color: ${palette.blue[6]};
           }
           pre code {
             display: block;
             padding: 1em;
             border-radius: 3px;
-            background: ${palette.black};
-            color: ${palette.white};
+            background: black;
+            color: white;
           }
           p code {
             color: ${palette.red[7]};
