@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "alias": ["frank.dev", "www.frank.dev"],
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "routes": [{ "src": "/post/(?<slug>[^/]+)$", "dest": "/post?slug=$slug" }]
+}
