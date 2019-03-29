@@ -1,15 +1,24 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import React from "react";
+import App, { Container } from "next/app";
+import Head from "next/head";
 import palette from "../util/palette";
 
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+class MyApp extends App {
+  static async getInitialProps({ Component, ctx }) {
+    let pageProps = {};
+
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx);
+    }
+
+    return { pageProps };
   }
 
   render() {
+    const { Component, pageProps } = this.props;
+
     return (
-      <html>
+      <Container>
         <Head>
           <title>frank.dev</title>
           <link rel="shortcut icon" href="static/favicon.ico" />
@@ -19,10 +28,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
+        <Component {...pageProps} />
         <style jsx global>{`
           html {
             border-top: 0.25rem solid ${palette.black};
@@ -66,7 +72,9 @@ export default class MyDocument extends Document {
             border-left: 2px solid ${palette.gray[7]};
           }
         `}</style>
-      </html>
+      </Container>
     );
   }
 }
+
+export default MyApp;
